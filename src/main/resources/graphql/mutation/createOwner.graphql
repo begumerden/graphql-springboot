@@ -1,0 +1,8 @@
+mutation createOwner ($input: CreateOwnerInput){
+    createOwner(input : $input) {
+        id
+        firstName
+        lastName
+    }
+
+}

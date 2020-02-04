@@ -1,0 +1,48 @@
+type Vehicle {
+    id: ID!,
+    type: VehicleType,
+    modelCode: String,
+    brandName: String,
+    launchDate: String,
+    fullName: String # modelCode + Brand
+    owner: Owner
+}
+
+enum VehicleType  {
+    CAR,
+    BIKE
+}
+
+type Owner {
+    id: ID!
+    firstName: String!
+    lastName: String!
+    vehicles: [Vehicle]
+}
+
+input AddVehicleInput {
+    ownerId: Int!
+    type: String,
+    modelCode: String,
+    brandName: String,
+    launchDate: String
+}
+
+input CreateOwnerInput {
+    firstName: String!,
+    lastName: String!,
+    city:String,
+    phone:String
+}
+
+type Query {
+    vehicles(count: Int):[Vehicle]
+    vehicle(id: ID):Vehicle
+    owner(id:ID): Owner
+}
+
+type Mutation {
+    addVehicle(input: AddVehicleInput): Vehicle
+    deleteVehicle(id: ID!): Boolean
+    createOwner(input: CreateOwnerInput) : Owner
+}

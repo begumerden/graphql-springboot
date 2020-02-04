@@ -1,0 +1,4 @@
+
+mutation {
+    deleteVehicle( id : 1)
+}

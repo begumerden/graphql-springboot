@@ -1,0 +1,8 @@
+mutation {
+    addVehicle(
+        input: {
+            ownerId: 1, type: "CAR", modelCode: "CAR123", brandName: "CR", launchDate: "2020-01-28"
+        }) {
+        id
+    }
+}

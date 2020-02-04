@@ -1,0 +1,22 @@
+query {
+    byCount : vehicles (count: 10)
+    {
+        id,
+        type,
+        modelCode,
+        fullName,
+        owner {
+            id
+            firstName
+            lastName
+        }
+    }
+
+#    byId: vehicle(id:1){
+#        id,
+#        type
+#        modelCode
+#    }
+}
+
+

@@ -1,0 +1,12 @@
+query {
+    owner: owner (id:1){
+        id,
+        firstName
+        lastName
+        vehicles {
+            fullName
+        }
+    }
+}
+
+
